@@ -1,0 +1,68 @@
+<template id="tpl-mt-logo">
+  <div>
+    <img
+      alt="Logo of spiral shells, red and black."
+      src="/assets/logo-bg.svg"
+    />
+    <h1><span>Mu</span><span>Torere</span></h1>
+  </div>
+  <style>
+    div {
+      align-items: var(--icon-align);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size);
+      width: min-content;
+    }
+    div,
+    h1 {
+      font-family: "Chelsea Market", sans;
+      font-size: calc(3.2 * var(--size));
+      font-weight: 400;
+      margin: 0;
+    }
+    img {
+      height: calc(var(--size) * var(--icon-size));
+    }
+    h1 span:first-child {
+      color: var(--color-red);
+    }
+  </style>
+</template>
+<style>
+  mt-logo {
+    --icon-size: 20;
+    --icon-align: "flex-start";
+  }
+</style>
+
+<script type="module">
+  import fc from "/node_modules/@dvo/fc/src/index.js";
+
+  const dictAlign = {
+    center: "center",
+    left: "flex-start",
+    right: "flex-end",
+  };
+
+  const connectedCallback = (el) => () => {
+    el.style.setProperty("--icon-size", +el.dataset.iconsize || 10);
+    el.style.setProperty(
+      "--icon-align",
+      dictAlign[el.dataset.align] || "flex-start"
+    );
+  };
+
+  const loadComponent = () => {
+    fc({
+      tag: "mt-logo",
+      props: {
+        connectedCallback,
+      },
+    });
+  };
+
+  window.g?.muTorere?.loaded
+    ? loadComponent()
+    : document.addEventListener("gameload", loadComponent);
+</script>

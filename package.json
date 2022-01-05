@@ -1,0 +1,21 @@
+{
+  "name": "mutorere",
+  "version": "0.0.1",
+  "description": "Adaptation of Maori boardgame.",
+  "keywords": [
+    "boardgame",
+    "maori",
+    "mu terere",
+    "ngati porou"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "isacvale",
+  "license": "ISC",
+  "dependencies": {
+    "@dvo/chips": "^0.0.2",
+    "@dvo/fc": "^0.0.4"
+  }
+}

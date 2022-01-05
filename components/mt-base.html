@@ -1,0 +1,20 @@
+<template id="tpl-game-logo">
+  <link
+    href="https://fonts.googleapis.com/css2?family='Chelsea Market':wght@300;400;500;600;800&display=swap"
+    rel="stylesheet"
+  />
+</template>
+<style>
+  :root {
+    --size: 10px;
+    --color-red: hsla(0, 76%, 31%, 1);
+  }
+</style>
+<script>
+  if (!window.g) window.g = {};
+  window.g.muTorere = {
+    loaded: false,
+  };
+  document.dispatchEvent(new Event("gameload"));
+  window.g.muTorere.loaded = true;
+</script>
